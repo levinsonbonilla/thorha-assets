@@ -41,60 +41,60 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 @font-face {
   font-family: Poppins-Regular;
-  src: url('http://localhost:8005/theme_1/fonts/Poppins/Poppins-Regular.ttf'); 
+  src: url('https://levinsonbonilla.github.io/thorha-assets/theme_1/fonts/Poppins/Poppins-Regular.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-Light;
-  src: url('http://localhost:8005/theme_1/fonts/Poppins/Poppins-Light.ttf'); 
+  src: url('https://levinsonbonilla.github.io/thorha-assets/theme_1/fonts/Poppins/Poppins-Light.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-ExtraLight;
-  src: url('http://localhost:8005/theme_1/fonts/Poppins/Poppins-ExtraLight.ttf'); 
+  src: url('https://levinsonbonilla.github.io/thorha-assets/theme_1/fonts/Poppins/Poppins-ExtraLight.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-Medium;
-  src: url('http://localhost:8005/theme_1/fonts/Poppins/Poppins-Medium.ttf'); 
+  src: url('https://levinsonbonilla.github.io/thorha-assets/theme_1/fonts/Poppins/Poppins-Medium.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-Italic;
-  src: url('http://localhost:8005/theme_1/fonts/Poppins/Poppins-Italic.ttf'); 
+  src: url('https://levinsonbonilla.github.io/thorha-assets/theme_1/fonts/Poppins/Poppins-Italic.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-Bold;
-  src: url('http://localhost:8005/theme_1/fonts/Poppins/Poppins-Bold.ttf'); 
+  src: url('https://levinsonbonilla.github.io/thorha-assets/theme_1/fonts/Poppins/Poppins-Bold.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-SemiBold;
-  src: url('http://localhost:8005/theme_1/fonts/Poppins/Poppins-SemiBold.ttf'); 
+  src: url('https://levinsonbonilla.github.io/thorha-assets/theme_1/fonts/Poppins/Poppins-SemiBold.ttf'); 
 }
 
 
 /*---------------------------------------------*/
 @font-face {
   font-family: PlayfairDisplay-Regular;
-  src: url('http://localhost:8005/theme_1/fonts/PlayfairDisplay/PlayfairDisplay-Regular.ttf'); 
+  src: url('https://levinsonbonilla.github.io/thorha-assets/theme_1/fonts/PlayfairDisplay/PlayfairDisplay-Regular.ttf'); 
 }
 
 @font-face {
   font-family: PlayfairDisplay-Bold;
-  src: url('http://localhost:8005/theme_1/fonts/PlayfairDisplay/PlayfairDisplay-Bold.ttf'); 
+  src: url('https://levinsonbonilla.github.io/thorha-assets/theme_1/fonts/PlayfairDisplay/PlayfairDisplay-Bold.ttf'); 
 }
 
 /*---------------------------------------------*/
 @font-face {
   font-family: Montserrat-Regular;
-  src: url('http://localhost:8005/theme_1/fonts/Montserrat/Montserrat-Regular.ttf'); 
+  src: url('https://levinsonbonilla.github.io/thorha-assets/theme_1/fonts/Montserrat/Montserrat-Regular.ttf'); 
 }
 
 @font-face {
   font-family: Montserrat-Bold;
-  src: url('http://localhost:8005/theme_1/fonts/Montserrat/Montserrat-Bold.ttf'); 
+  src: url('https://levinsonbonilla.github.io/thorha-assets/theme_1/fonts/Montserrat/Montserrat-Bold.ttf'); 
 }
 
 
@@ -1529,13 +1529,13 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 button.mfp-arrow-right {
-  background-image: url(http://localhost:8005/theme_1/images/icons/icon-next.png);
+  background-image: url(https://levinsonbonilla.github.io/thorha-assets/theme_1/images/icons/icon-next.png);
   background-position: center center;
   background-repeat: no-repeat;
 }
 
 button.mfp-arrow-left {
-  background-image: url(http://localhost:8005/theme_1/images/icons/icon-prev.png);
+  background-image: url(https://levinsonbonilla.github.io/thorha-assets/theme_1/images/icons/icon-prev.png);
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -1548,7 +1548,7 @@ button.mfp-close {
   right: 0;
   top: 0;
   color: transparent !important;
-  background-image: url(http://localhost:8005/theme_1/images/icons/icon-close.png);
+  background-image: url(https://levinsonbonilla.github.io/thorha-assets/theme_1/images/icons/icon-close.png);
   background-position: center center;
   background-repeat: no-repeat;
   cursor: pointer !important;

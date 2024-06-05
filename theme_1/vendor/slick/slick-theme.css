@@ -12,8 +12,8 @@
     font-weight: normal;
     font-style: normal;
 
-    src: url('.http://localhost:8005/theme_1/fonts/slick.eot');
-    src: url('.http://localhost:8005/theme_1/fonts/slick.eot?#iefix') format('embedded-opentype'), url('.http://localhost:8005/theme_1/fonts/slick.woff') format('woff'), url('.http://localhost:8005/theme_1/fonts/slick.ttf') format('truetype'), url('.http://localhost:8005/theme_1/fonts/slick.svg#slick') format('svg');
+    src: url('.https://levinsonbonilla.github.io/thorha-assets/theme_1/fonts/slick.eot');
+    src: url('.https://levinsonbonilla.github.io/thorha-assets/theme_1/fonts/slick.eot?#iefix') format('embedded-opentype'), url('.https://levinsonbonilla.github.io/thorha-assets/theme_1/fonts/slick.woff') format('woff'), url('.https://levinsonbonilla.github.io/thorha-assets/theme_1/fonts/slick.ttf') format('truetype'), url('.https://levinsonbonilla.github.io/thorha-assets/theme_1/fonts/slick.svg#slick') format('svg');
 }
 /* Arrows */
 .slick-prev,
