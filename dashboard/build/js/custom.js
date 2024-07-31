@@ -39,7 +39,7 @@
  * and open the template in the editor.
  */
 
-var CURRENT_URL = "",
+var CURRENT_URL = "window.location.href.split('#')[0].split('?')[0]",
     $BODY = $('body'),
     $MENU_TOGGLE = $('#menu_toggle'),
     $SIDEBAR_MENU = $('#sidebar-menu'),
@@ -69,35 +69,38 @@ var setContentHeight = function () {
 	$RIGHT_COL.css('min-height', contentHeight);
 };
 
-  $SIDEBAR_MENU.find('a').on('click', function(ev) {
-	  console.log('clicked - sidebar_menu');
-        var $li = $(this).parent();
+$SIDEBAR_MENU.find('a').on('click', function(ev) {
+    console.log('clicked - sidebar_menu');
+    var $li = $(this).parent();
 
-        if ($li.is('.active')) {
-            $li.removeClass('active active-sm');
-            $('ul:first', $li).slideUp(function() {
-                setContentHeight();
-            });
+    if ($li.is('.active')) {
+        // Remover las clases active y active-sm
+        $li.removeClass('active active-sm');
+        $('ul:first', $li).slideUp(function() {
+            setContentHeight();
+        });
+    } else {
+        // Evitar cerrar el menú si estamos en un submenú
+        if (!$li.parent().is('.child_menu')) {
+            // Remover las clases active y active-sm de todos los elementos
+            $SIDEBAR_MENU.find('li').removeClass('active active-sm');
+            // Deslizar hacia arriba todos los submenús
+            $SIDEBAR_MENU.find('li ul').slideUp();
         } else {
-            // prevent closing menu if we are on child menu
-            if (!$li.parent().is('.child_menu')) {
-                $SIDEBAR_MENU.find('li').removeClass('active active-sm');
-                $SIDEBAR_MENU.find('li ul').slideUp();
-            }else
-            {
-				if ( $BODY.is( ".nav-sm" ) )
-				{
-					$SIDEBAR_MENU.find( "li" ).removeClass( "active active-sm" );
-					$SIDEBAR_MENU.find( "li ul" ).slideUp();
-				}
-			}
-            $li.addClass('active');
-
-            $('ul:first', $li).slideDown(function() {
-                setContentHeight();
-            });
+            // Si el cuerpo tiene la clase nav-sm
+            if ($BODY.is(".nav-sm")) {
+                // Remover las clases active y active-sm de todos los elementos
+                $SIDEBAR_MENU.find("li").removeClass("active active-sm");
+                // Deslizar hacia arriba todos los submenús
+                $SIDEBAR_MENU.find("li ul").slideUp();
+            }
         }
-    });
+        // Deslizar hacia abajo el primer submenú dentro del <li> clicado
+        $('ul:first', $li).slideDown(function() {
+            setContentHeight();
+        });
+    }
+});
 
 // toggle small or large menu 
 $MENU_TOGGLE.on('click', function() {
