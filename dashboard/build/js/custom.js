@@ -73,30 +73,30 @@ var setContentHeight = function () {
 	  console.log('clicked - sidebar_menu');
         var $li = $(this).parent();
 
-        // if ($li.is('.active')) {
-        //     $li.removeClass('active active-sm');
-        //     $('ul:first', $li).slideUp(function() {
-        //         setContentHeight();
-        //     });
-        // } else {
-        //     // prevent closing menu if we are on child menu
-        //     if (!$li.parent().is('.child_menu')) {
-        //         $SIDEBAR_MENU.find('li').removeClass('active active-sm');
-        //         $SIDEBAR_MENU.find('li ul').slideUp();
-        //     }else
-        //     {
-		// 		if ( $BODY.is( ".nav-sm" ) )
-		// 		{
-		// 			$SIDEBAR_MENU.find( "li" ).removeClass( "active active-sm" );
-		// 			$SIDEBAR_MENU.find( "li ul" ).slideUp();
-		// 		}
-		// 	}
-        //     $li.addClass('active');
+        if ($li.is('.active')) {
+            $li.removeClass('active active-sm');
+            $('ul:first', $li).slideUp(function() {
+                setContentHeight();
+            });
+        } else {
+            // prevent closing menu if we are on child menu
+            if (!$li.parent().is('.child_menu')) {
+                $SIDEBAR_MENU.find('li').removeClass('active active-sm');
+                $SIDEBAR_MENU.find('li ul').slideUp();
+            }else
+            {
+				if ( $BODY.is( ".nav-sm" ) )
+				{
+					$SIDEBAR_MENU.find( "li" ).removeClass( "active active-sm" );
+					$SIDEBAR_MENU.find( "li ul" ).slideUp();
+				}
+			}
+            // $li.addClass('active');
 
-        //     $('ul:first', $li).slideDown(function() {
-        //         setContentHeight();
-        //     });
-        // }
+            $('ul:first', $li).slideDown(function() {
+                setContentHeight();
+            });
+        }
     });
 
 // toggle small or large menu 
@@ -954,35 +954,35 @@ if (typeof NProgress != 'undefined') {
 	   
 	   /* PARSLEY */
 			
-		function init_parsley() {
+		// function init_parsley() {
 			
-			if( typeof (parsley) === 'undefined'){ return; }
-			console.log('init_parsley');
+		// 	if( typeof (parsley) === 'undefined'){ return; }
+		// 	console.log('init_parsley');
 			
-			$/*.listen*/('parsley:field:validate', function() {
-			  validateFront();
-			});
-			$('#demo-form .btn').on('click', function() {
-			  $('#demo-form').parsley().validate();
-			  validateFront();
-			});
-			var validateFront = function() {
-			  if (true === $('#demo-form').parsley().isValid()) {
-				$('.bs-callout-info').removeClass('hidden');
-				$('.bs-callout-warning').addClass('hidden');
-			  } else {
-				$('.bs-callout-info').addClass('hidden');
-				$('.bs-callout-warning').removeClass('hidden');
-			  }
-			};
+		// 	$/*.listen*/('parsley:field:validate', function() {
+		// 	  validateFront();
+		// 	});
+		// 	$('#demo-form .btn').on('click', function() {
+		// 	  $('#demo-form').parsley().validate();
+		// 	  validateFront();
+		// 	});
+		// 	var validateFront = function() {
+		// 	  if (true === $('#demo-form').parsley().isValid()) {
+		// 		$('.bs-callout-info').removeClass('hidden');
+		// 		$('.bs-callout-warning').addClass('hidden');
+		// 	  } else {
+		// 		$('.bs-callout-info').addClass('hidden');
+		// 		$('.bs-callout-warning').removeClass('hidden');
+		// 	  }
+		// 	};
 		  
-			$/*.listen*/('parsley:field:validate', function() {
-			  validateFront();
-			});
-			$('#demo-form2 .btn').on('click', function() {
-			  $('#demo-form2').parsley().validate();
-			  validateFront();
-			});
+		// 	$/*.listen*/('parsley:field:validate', function() {
+		// 	  validateFront();
+		// 	});
+		// 	$('#demo-form2 .btn').on('click', function() {
+		// 	  $('#demo-form2').parsley().validate();
+		// 	  validateFront();
+		// 	});
 			// var validateFront = function() {
 			//   if (true === $('#demo-form2').parsley().isValid()) {
 			// 	$('.bs-callout-info').removeClass('hidden');
@@ -993,11 +993,11 @@ if (typeof NProgress != 'undefined') {
 			//   }
 			// };
 			
-			  try {
-				hljs.initHighlightingOnLoad();
-			  } catch (err) {}
+		// 	  try {
+		// 		hljs.initHighlightingOnLoad();
+		// 	  } catch (err) {}
 			
-		};
+		// };
 	   
 		
 		  /* INPUTS */
