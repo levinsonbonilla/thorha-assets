@@ -39,7 +39,7 @@
  * and open the template in the editor.
  */
 
-var CURRENT_URL = "window.location.href.split('#')[0].split('?')[0]",
+var CURRENT_URL = window.location.href.split('#')[0].split('?')[0],
     $BODY = $('body'),
     $MENU_TOGGLE = $('#menu_toggle'),
     $SIDEBAR_MENU = $('#sidebar-menu'),
@@ -70,7 +70,6 @@ var setContentHeight = function () {
 };
 
 $SIDEBAR_MENU.find('a').on('click', function(ev) {
-    console.log('clicked - sidebar_menu');
     var $li = $(this).parent();
 
     if ($li.is('.active')) {
@@ -95,6 +94,9 @@ $SIDEBAR_MENU.find('a').on('click', function(ev) {
                 $SIDEBAR_MENU.find("li ul").slideUp();
             }
         }
+        // Marcar el <li> clicado como activo -- sin esto, el próximo clic nunca
+        // detecta ".active" y el submenú jamás se puede volver a colapsar.
+        $li.addClass('active');
         // Deslizar hacia abajo el primer submenú dentro del <li> clicado
         $('ul:first', $li).slideDown(function() {
             setContentHeight();
@@ -104,8 +106,6 @@ $SIDEBAR_MENU.find('a').on('click', function(ev) {
 
 // toggle small or large menu 
 $MENU_TOGGLE.on('click', function() {
-		console.log('clicked - menu toggle');
-		
 		if ($BODY.hasClass('nav-md')) {
 			$SIDEBAR_MENU.find('li.active ul').hide();
 			$SIDEBAR_MENU.find('li.active').addClass('active-sm').removeClass('active');
