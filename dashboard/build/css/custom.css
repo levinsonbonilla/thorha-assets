@@ -787,8 +787,15 @@ a:focus {
     display: block;
     padding: 13px 15px 12px
 }
-.nav.side-menu>li.current-page,
-.nav.side-menu>li.active {
+/* Original de Gentelella: el border-right iba en el <li>, no en su <a> -- con un desplegable
+   chico (2 niveles, pocos hijos) casi no se nota, pero con 3 niveles y varias secciones
+   anidadas (Productos > Configuración/Gestión, Configuración con 9 hijos) el <li> del nivel de
+   arriba mide lo mismo que TODO su árbol expandido, así que el acento terminaba corriendo por
+   la altura entera de la sección -- dando la sensación de "todo está seleccionado" en vez de
+   marcar solo la fila del link. Acotado a ">a" (altura de una sola fila) para que sea un acento
+   de "sección abierta", no un tinte que tape el resto. */
+.nav.side-menu>li.current-page>a,
+.nav.side-menu>li.active>a {
     border-right: 5px solid #1ABB9C
 }
 .nav li.current-page {
