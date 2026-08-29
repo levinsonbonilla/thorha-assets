@@ -11,6 +11,117 @@
   sin importar la proporción de la foto subida.
 */
 
+/* ============================================================
+   Slider/carrusel del home -- reporte real del usuario (2026-08-28, captura
+   del home): con `.item-slick1` a casi toda la altura del viewport
+   (`height: calc(100vh - 40px)` en main.css) y `background-size: cover`, las
+   imágenes de fondo (banners de producto, no pensados para ese aspect ratio
+   tan alto) quedaban MUY recortadas/ampliadas -- se veía solo un fragmento
+   zoomeado del gráfico (p.ej. el logo cortado a la mitad). Al mismo tiempo
+   `.ltext-201` (60px, mayúsculas, sin ancho máximo) renderizaba
+   `slide.description` -- pensado como bajada corta pero usado acá con un
+   párrafo completo -- ocupando las 3 líneas del ancho entero del contenedor,
+   en gris oscuro (`.cl2` = #333) directo sobre la foto clara/colorida, y por
+   momentos ilegible según la zona de la imagen debajo.
+
+   Fix: alto del slide fijo por breakpoint (no atado al viewport, para no
+   forzar un recorte agresivo en imágenes panorámicas ni en pantallas muy
+   altas), overlay de degradado SIEMPRE visible detrás del texto (mismo
+   patrón que `.category-card-overlay` más abajo: contraste garantizado sin
+   depender del color de la foto subida), texto en blanco, ancho máximo en
+   el bloque de texto para que el párrafo se lea como párrafo y no como una
+   pared de mayúsculas gigante, y tamaño de letra con `clamp()` para escalar
+   suave entre breakpoints en vez de saltos fijos. Selectores scoped a
+   `.section-slide` -- `.ltext-101`/`.ltext-201` también se usan en
+   checkout/pending y checkout/success, que no viven dentro de esa sección. */
+.section-slide {
+  /* pedido real del usuario (2026-08-28): que el carrusel no vaya "de esquina
+     a esquina" -- antes ocupaba el ancho completo del navegador sin ningún
+     margen. Con este padding + `border-radius` en `.item-slick1` de abajo
+     queda como una tarjeta insertada en la página, no un banner a sangre. */
+  padding: 0 40px;
+}
+
+.section-slide .item-slick1 {
+  position: relative;
+  height: 560px;
+  background-position: center center;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.section-slide .item-slick1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 12, 25, 0.7) 0%, rgba(10, 12, 25, 0.4) 45%, rgba(10, 12, 25, 0.05) 75%);
+}
+
+.section-slide .item-slick1 > .container {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.section-slide .flex-col-l-m {
+  max-width: 640px;
+  padding-top: 0 !important;
+}
+
+.section-slide .ltext-101 {
+  display: inline-block;
+  font-family: Poppins-Medium;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #cfd3ff;
+}
+
+.section-slide .ltext-201 {
+  font-size: clamp(24px, 3.4vw, 42px);
+  line-height: 1.35;
+  text-transform: none;
+  color: #fff;
+  /* pedido real del usuario (2026-08-28): "el texto con trazo" -- contorno
+     oscuro alrededor de cada letra (no solo un `text-shadow` difuso) para que
+     el texto blanco siga siendo legible incluso sobre la franja más clara del
+     degradado o una foto de fondo muy clara. `text-shadow` se mantiene además
+     como sombra suave para dar profundidad, el trazo es lo que garantiza el
+     contorno nítido letra por letra. */
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 767px) {
+  .section-slide {
+    padding: 0 20px;
+  }
+
+  .section-slide .item-slick1 {
+    height: 460px;
+    border-radius: 12px;
+  }
+
+  .section-slide .flex-col-l-m {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .section-slide {
+    padding: 0 12px;
+  }
+
+  .section-slide .item-slick1 {
+    height: 380px;
+    border-radius: 10px;
+  }
+
+  .section-slide .ltext-201 {
+    font-size: clamp(20px, 6vw, 28px);
+    -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.6);
+  }
+}
+
 .section-categories-head {
   text-align: center;
 }

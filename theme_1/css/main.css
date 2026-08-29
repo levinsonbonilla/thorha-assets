@@ -1948,12 +1948,26 @@ input.num-product::-webkit-inner-spin-button {
   font-size: 16px;
 }
 
+/* column-6 (botón "quitar del carrito") nunca tuvo reglas en este archivo --
+   el tema base no trae una sexta columna en la tabla del carrito. Sin ancho ni
+   padding quedaba pegado al borde derecho de la tabla, y `.btn-remove-cart`
+   (abajo) renderizaba como un <button> sin estilo del navegador: reportado por
+   el usuario como "la X de borrar" descuadrada (2026-08-28). padding-right
+   igual al de column-1 (50px) para que el borde derecho de la tabla quede tan
+   despejado como el izquierdo. */
+.table-shopping-cart .column-6 {
+  width: 70px;
+  padding-right: 50px;
+  text-align: center;
+}
+
 .table-shopping-cart .table_row {
   height: 185px;
 }
 
 .table-shopping-cart .table_row td {
   padding-bottom: 20px;
+  vertical-align: middle;
 }
 
 .table-shopping-cart .table_row td.column-1 {
@@ -1974,6 +1988,36 @@ input.num-product::-webkit-inner-spin-button {
   font-family: Poppins-Regular;
   color: #555;
   line-height: 1.6;
+}
+
+/* Botón "quitar del carrito" (icon-only, .zmdi-close) -- sin esta regla
+   heredaba el <button> por defecto del navegador (borde, fondo gris, esquinas
+   cuadradas, ~13px), lo que lo hacía ver chico y fuera de lugar al lado de
+   íconos ya estilados como .icon-header-item. Reutiliza el mismo lenguaje que
+   ese ícono (plano, sin fondo, tamaño generoso, hover con el azul de acento
+   del tema -- ver .hov-cl1 / #717fe0) en vez de inventar un componente nuevo
+   (botón circular con borde) que no existe en ningún otro lado del tema. */
+.btn-remove-cart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.btn-remove-cart:hover {
+  color: #717fe0;
+}
+
+.btn-remove-cart i {
+  font-size: 20px;
+  line-height: 1;
 }
 
 
