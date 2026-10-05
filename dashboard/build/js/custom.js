@@ -79,20 +79,21 @@ $SIDEBAR_MENU.find('a').on('click', function(ev) {
             setContentHeight();
         });
     } else {
-        // Evitar cerrar el menú si estamos en un submenú
+        // Evitar cerrar el menú si estamos en un submenú -- bug real reportado por el
+        // usuario, 2026-09-14 (ver thorha/thorha-context/agendamiento-citas/checklist.md
+        // "Responsive"): esta rama tenía un caso especial "si el body tiene nav-sm, cerrar
+        // TODOS los submenús igual" que rompía cualquier submenú anidado de 2+ niveles en
+        // modo ícono (celular) -- al hacer clic en un ítem de 2do nivel (ej. "Configuración"
+        // dentro de "Productos"), cerraba también el flyout PADRE del que colgaba ("Productos"),
+        // dejando el de 3er nivel abierto pero invisible (su ancestro quedaba display:none).
+        // En desktop nunca se activa `nav-sm` (el sidebar siempre queda expandido ahí), por
+        // eso el bug solo se veía en mobile. Quitado -- un clic en un submenú nunca debe
+        // cerrar sus propios ancestros, sea cual sea el modo del body.
         if (!$li.parent().is('.child_menu')) {
             // Remover las clases active y active-sm de todos los elementos
             $SIDEBAR_MENU.find('li').removeClass('active active-sm');
             // Deslizar hacia arriba todos los submenús
             $SIDEBAR_MENU.find('li ul').slideUp();
-        } else {
-            // Si el cuerpo tiene la clase nav-sm
-            if ($BODY.is(".nav-sm")) {
-                // Remover las clases active y active-sm de todos los elementos
-                $SIDEBAR_MENU.find("li").removeClass("active active-sm");
-                // Deslizar hacia arriba todos los submenús
-                $SIDEBAR_MENU.find("li ul").slideUp();
-            }
         }
         // Marcar el <li> clicado como activo -- sin esto, el próximo clic nunca
         // detecta ".active" y el submenú jamás se puede volver a colapsar.
