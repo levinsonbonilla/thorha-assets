@@ -1,0 +1,36 @@
+/*
+ * theme_6 -- "New Age" (landing, adaptado de Start Bootstrap New Age, MIT; ver LICENSE-StartBootstrap-New Age.txt).
+ * Página de presentación sin tienda ni citas. Los colores salen de la paleta del dominio (--primary, --secondary,
+ * --accent, --surface, --text) con el color original de la plantilla (#2937f0) como respaldo.
+ */
+:root {
+  --t6-primary: var(--primary, #2937f0);
+  --t6-secondary: var(--secondary, #2937f0);
+  --t6-accent: var(--accent, #2937f0);
+  --t6-surface: var(--surface, #f8f9fa);
+  --t6-text: var(--text, #212529);
+  --t6-card: #fff;
+  --t6-muted: rgba(33, 37, 41, .65);
+  --t6-line: rgba(0, 0, 0, .12);
+  --t6-radius: 12px;
+  --t6-radius-sm: 6px;
+  --bs-primary: var(--t6-primary);
+}
+/* Botones/enlaces con el primario de la paleta (el acento suele ser un tono claro y el texto blanco no se lee sobre él). */
+.btn-primary { --bs-btn-bg: var(--t6-primary); --bs-btn-border-color: var(--t6-primary); --bs-btn-color: #fff; --bs-btn-hover-bg: var(--t6-text); --bs-btn-hover-border-color: var(--t6-text); --bs-btn-hover-color: #fff; --bs-btn-active-bg: var(--t6-text); --bs-btn-active-border-color: var(--t6-text); --bs-btn-disabled-bg: var(--t6-primary); --bs-btn-disabled-border-color: var(--t6-primary); }
+.btn-outline-primary { --bs-btn-color: var(--t6-primary); --bs-btn-border-color: var(--t6-primary); --bs-btn-hover-bg: var(--t6-primary); --bs-btn-hover-border-color: var(--t6-primary); --bs-btn-hover-color: #fff; }
+.text-primary { color: var(--t6-primary) !important; }
+.bg-primary { background-color: var(--t6-primary) !important; }
+.border-primary { border-color: var(--t6-primary) !important; }
+.t6-main a:not(.btn):not(.nav-link) { color: var(--t6-primary); }
+.t6-lang a { text-decoration: none; }
+.t6-section { padding: 4.5rem 0; }
+.t6-card { background: var(--t6-card); color: var(--t6-text); border-radius: var(--t6-radius); box-shadow: 0 1px 8px rgba(0, 0, 0, .1); padding: 2rem; }
+.t6-icon { font-size: 1.6rem; color: var(--t6-primary); }
+.t6-map { width: 100%; min-height: 280px; border: 0; border-radius: var(--t6-radius-sm); display: block; }
+.t6-label { display: block; font-size: .85rem; font-weight: 600; margin: 0 0 .3rem; }
+.t6-inner-hero { background: var(--t6-text); color: #fff; padding: 9rem 0 3.5rem; text-align: center; }
+.t6-inner-hero h1 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.6rem); color: #fff; }
+.ord-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+/* Título de portada: acotado para que un texto largo del carrusel no desborde la portada. */
+.t6-hero-title { font-size: clamp(1.6rem, 4.2vw, 3.2rem) !important; line-height: 1.15; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }

@@ -1,0 +1,47 @@
+/*
+ * theme_27 -- "Airspace" (adaptado de Start Bootstrap Airspace, MIT, © Start Bootstrap LLC; ver
+ * LICENSE-StartBootstrap-LandingPage.txt). Página de presentación sin tienda ni citas. Los colores salen de la paleta
+ * del dominio (--primary, --secondary, --accent, --surface, --text) con el azul original como respaldo.
+ */
+:root {
+  --t27-primary: var(--primary, #655e7a);
+  --t27-secondary: var(--secondary, #3f3a55);
+  --t27-accent: var(--accent, #c9c4dc);
+  --t27-surface: var(--surface, #f6f6fa);
+  --t27-text: var(--text, #2b2840);
+  --t27-card: #fff;
+  --t27-muted: rgba(33, 37, 41, .65);
+  --t27-line: rgba(0, 0, 0, .12);
+  --t27-radius: 12px;
+  --t27-radius-sm: 6px;
+}
+body { color: var(--t27-text); }
+.bg-light { background-color: var(--t27-surface) !important; }
+/* Botones/enlaces con el primario de la paleta (el acento suele ser un tono claro y el texto blanco no se lee sobre él). */
+.btn-primary { --bs-btn-bg: var(--t27-primary); --bs-btn-border-color: var(--t27-primary); --bs-btn-color: #fff; --bs-btn-hover-bg: var(--t27-text); --bs-btn-hover-border-color: var(--t27-text); --bs-btn-hover-color: #fff; --bs-btn-active-bg: var(--t27-text); --bs-btn-active-border-color: var(--t27-text); --bs-btn-disabled-bg: var(--t27-primary); --bs-btn-disabled-border-color: var(--t27-primary); }
+.btn-outline-primary { --bs-btn-color: var(--t27-primary); --bs-btn-border-color: var(--t27-primary); --bs-btn-hover-bg: var(--t27-primary); --bs-btn-hover-border-color: var(--t27-primary); --bs-btn-hover-color: #fff; }
+.text-primary { color: var(--t27-primary) !important; }
+a { color: var(--t27-primary); }
+/* Velo oscuro (color de texto de la paleta) para que el título blanco se lea sobre cualquier foto de portada. */
+header.masthead:before { background-color: var(--t27-text); opacity: .6; }
+.t27-navbar .navbar-brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; color: var(--t27-primary); }
+.t27-navbar .navbar-brand img { height: 36px; width: auto; max-width: 130px; object-fit: contain; }
+.t27-navbar .nav-link { color: var(--t27-text); }
+.t27-navbar .nav-link:hover { color: var(--t27-secondary); }
+.t27-lang a, .t27-lang span { font-size: .85rem; margin-right: .5rem; text-decoration: none; }
+.t27-masthead-sub { font-size: 1.15rem; opacity: .92; max-width: 40rem; margin-left: auto; margin-right: auto; }
+header.masthead .t27-clamp { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.showcase .showcase-text h2 { color: var(--t27-primary); }
+.showcase .showcase-img { min-height: 22rem; background-size: cover; background-position: center; }
+.showcase-text-body { font-size: 1.1rem; color: var(--t27-muted); }
+.t27-section { padding: 5rem 0; }
+.t27-card { background: var(--t27-card); border-radius: var(--t27-radius); box-shadow: 0 1px 8px rgba(0, 0, 0, .08); padding: 2rem; }
+.t27-icon { font-size: 1.6rem; color: var(--t27-primary); }
+.t27-page-hero { background: var(--t27-primary); color: #fff; padding: 3.5rem 0; }
+.t27-page-hero h1 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.6rem); }
+.t27-map { width: 100%; min-height: 280px; border: 0; border-radius: var(--t27-radius-sm); display: block; }
+.t27-footer { background: var(--t27-surface); border-top: 1px solid var(--t27-line); padding: 3rem 0; }
+.t27-footer a { text-decoration: none; }
+.t27-label { display: block; font-size: .85rem; font-weight: 600; margin: 0 0 .3rem; }
+.t27-pay-chip { border: 1px solid var(--t27-line); border-radius: 4px; padding: 2px 10px; font-size: .78rem; margin: 0 .25rem .4rem; display: inline-block; }
+.ord-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; }

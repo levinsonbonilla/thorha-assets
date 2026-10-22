@@ -1,0 +1,47 @@
+/*
+ * theme_22 -- "Business" (landing, adaptada a mano de Business by Ayro UI, MIT, distribuida por ThemeWagon; ver LICENSE-Business-README.md).
+ * Usa su propio style.css; los colores salen de la paleta del dominio: la plantilla ya nombra sus variables --primary, --secondary y
+ * --accent, así que la paleta las reemplaza directamente. Las variantes (dark/light) se derivan del color elegido.
+ */
+:root {
+  --primary-dark: color-mix(in srgb, var(--primary) 78%, #000);
+  --primary-light: color-mix(in srgb, var(--primary) 12%, #fff);
+  --accent-dark: color-mix(in srgb, var(--accent) 78%, #000);
+  --accent-light: color-mix(in srgb, var(--accent) 22%, #fff);
+  --secondary-dark: color-mix(in srgb, var(--secondary) 78%, #000);
+  --secondary-light: color-mix(in srgb, var(--secondary) 15%, #fff);
+  --t22-primary: var(--primary);
+  --t22-secondary: var(--secondary);
+  --t22-accent: var(--accent);
+  --t22-surface: var(--surface, #f5f5f5);
+  --t22-text: var(--text, #1d1d1d);
+  --t22-card: #fff;
+  --t22-muted: rgba(29, 29, 29, .65);
+  --t22-line: rgba(0, 0, 0, .12);
+  --t22-radius: 8px;
+  --t22-radius-sm: 6px;
+}
+body { color: var(--t22-text); background: #fff; }
+.t22-brand-text { color: #fff; font-weight: 700; font-size: 1.35rem; letter-spacing: .2px; }
+.t22-brand-logo { height: 36px; width: auto; max-width: 140px; object-fit: contain; }
+.navbar-area.navbar-nine .navbar-brand { display: inline-flex; align-items: center; gap: .6rem; }
+.t22-lang { display: flex; align-items: center; gap: .6rem; margin-left: 1rem; }
+.t22-lang a, .t22-lang span { color: rgba(255, 255, 255, .75); font-size: .85rem; text-decoration: none; }
+.t22-lang span { color: #fff; font-weight: 700; }
+.t22-main .about-five .about-image-five img { width: 100%; border-radius: 8px; object-fit: cover; }
+.t22-main .header-eight .header-image img { aspect-ratio: 4 / 3; object-fit: cover; }
+.t22-hero-title { font-size: clamp(1.8rem, 3.6vw, 3rem); line-height: 1.15; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.t22-service-text { color: var(--dark-3); }
+.t22-text :is(p, ul, ol) { margin-bottom: 1rem; }
+.t22-section { padding: 4.5rem 0; }
+.t22-card { background: var(--t22-card); color: var(--t22-text); border-radius: var(--t22-radius); box-shadow: 0 1px 8px rgba(0, 0, 0, .1); padding: 2rem; }
+.t22-icon { font-size: 1.6rem; color: var(--t22-primary); }
+.t22-map { width: 100%; min-height: 320px; border: 0; border-radius: var(--t22-radius); display: block; }
+.t22-label { display: block; font-size: .85rem; font-weight: 600; margin: 0 0 .3rem; }
+.t22-inner-hero { background: var(--t22-primary); color: #fff; padding: 9rem 0 3.5rem; text-align: center; }
+.t22-inner-hero h1 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.6rem); color: #fff; }
+.t22-contact-wrap { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+@media (min-width: 992px) { .t22-contact-wrap { grid-template-columns: 5fr 7fr; } }
+.ord-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+.t22-main a:not(.btn):not(.scroll-top) { color: var(--primary); }
+.footer-eleven a { color: inherit; }

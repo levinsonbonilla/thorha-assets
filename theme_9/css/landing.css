@@ -1,0 +1,36 @@
+/*
+ * theme_9 -- "One Page Wonder" (landing, adaptado de Start Bootstrap One Page Wonder, MIT; ver LICENSE-StartBootstrap-One Page Wonder.txt).
+ * Página de presentación sin tienda ni citas. Los colores salen de la paleta del dominio (--primary, --secondary,
+ * --accent, --surface, --text) con el color original de la plantilla (#ee0979) como respaldo.
+ */
+:root {
+  --t9-primary: var(--primary, #ee0979);
+  --t9-secondary: var(--secondary, #ee0979);
+  --t9-accent: var(--accent, #ee0979);
+  --t9-surface: var(--surface, #f8f9fa);
+  --t9-text: var(--text, #212529);
+  --t9-card: #fff;
+  --t9-muted: rgba(33, 37, 41, .65);
+  --t9-line: rgba(0, 0, 0, .12);
+  --t9-radius: 12px;
+  --t9-radius-sm: 6px;
+  --bs-primary: var(--t9-primary);
+}
+/* Botones/enlaces con el primario de la paleta (el acento suele ser un tono claro y el texto blanco no se lee sobre él). */
+.btn-primary { --bs-btn-bg: var(--t9-primary); --bs-btn-border-color: var(--t9-primary); --bs-btn-color: #fff; --bs-btn-hover-bg: var(--t9-text); --bs-btn-hover-border-color: var(--t9-text); --bs-btn-hover-color: #fff; --bs-btn-active-bg: var(--t9-text); --bs-btn-active-border-color: var(--t9-text); --bs-btn-disabled-bg: var(--t9-primary); --bs-btn-disabled-border-color: var(--t9-primary); }
+.btn-outline-primary { --bs-btn-color: var(--t9-primary); --bs-btn-border-color: var(--t9-primary); --bs-btn-hover-bg: var(--t9-primary); --bs-btn-hover-border-color: var(--t9-primary); --bs-btn-hover-color: #fff; }
+.text-primary { color: var(--t9-primary) !important; }
+.bg-primary { background-color: var(--t9-primary) !important; }
+.border-primary { border-color: var(--t9-primary) !important; }
+.t9-main a:not(.btn):not(.nav-link) { color: var(--t9-primary); }
+.t9-lang a { text-decoration: none; }
+.t9-section { padding: 4.5rem 0; }
+.t9-card { background: var(--t9-card); color: var(--t9-text); border-radius: var(--t9-radius); box-shadow: 0 1px 8px rgba(0, 0, 0, .1); padding: 2rem; }
+.t9-icon { font-size: 1.6rem; color: var(--t9-primary); }
+.t9-map { width: 100%; min-height: 280px; border: 0; border-radius: var(--t9-radius-sm); display: block; }
+.t9-label { display: block; font-size: .85rem; font-weight: 600; margin: 0 0 .3rem; }
+.t9-inner-hero { background: var(--t9-text); color: #fff; padding: 9rem 0 3.5rem; text-align: center; }
+.t9-inner-hero h1 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.6rem); color: #fff; }
+.ord-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+/* Título de portada: acotado para que un texto largo del carrusel no desborde la portada. */
+.t9-hero-title { font-size: clamp(1.6rem, 4.2vw, 3.2rem) !important; line-height: 1.15; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }

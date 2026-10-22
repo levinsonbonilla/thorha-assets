@@ -1,0 +1,36 @@
+/*
+ * theme_13 -- "Modern Business" (landing, adaptado de Start Bootstrap Modern Business, MIT; ver LICENSE-StartBootstrap-Modern Business.txt).
+ * Página de presentación sin tienda ni citas. Los colores salen de la paleta del dominio (--primary, --secondary,
+ * --accent, --surface, --text) con el color original de la plantilla (#0d6efd) como respaldo.
+ */
+:root {
+  --t13-primary: var(--primary, #0d6efd);
+  --t13-secondary: var(--secondary, #0d6efd);
+  --t13-accent: var(--accent, #0d6efd);
+  --t13-surface: var(--surface, #f8f9fa);
+  --t13-text: var(--text, #212529);
+  --t13-card: #fff;
+  --t13-muted: rgba(33, 37, 41, .65);
+  --t13-line: rgba(0, 0, 0, .12);
+  --t13-radius: 12px;
+  --t13-radius-sm: 6px;
+  --bs-primary: var(--t13-primary);
+}
+/* Botones/enlaces con el primario de la paleta (el acento suele ser un tono claro y el texto blanco no se lee sobre él). */
+.btn-primary { --bs-btn-bg: var(--t13-primary); --bs-btn-border-color: var(--t13-primary); --bs-btn-color: #fff; --bs-btn-hover-bg: var(--t13-text); --bs-btn-hover-border-color: var(--t13-text); --bs-btn-hover-color: #fff; --bs-btn-active-bg: var(--t13-text); --bs-btn-active-border-color: var(--t13-text); --bs-btn-disabled-bg: var(--t13-primary); --bs-btn-disabled-border-color: var(--t13-primary); }
+.btn-outline-primary { --bs-btn-color: var(--t13-primary); --bs-btn-border-color: var(--t13-primary); --bs-btn-hover-bg: var(--t13-primary); --bs-btn-hover-border-color: var(--t13-primary); --bs-btn-hover-color: #fff; }
+.text-primary { color: var(--t13-primary) !important; }
+.bg-primary { background-color: var(--t13-primary) !important; }
+.border-primary { border-color: var(--t13-primary) !important; }
+.t13-main a:not(.btn):not(.nav-link) { color: var(--t13-primary); }
+.t13-lang a { text-decoration: none; }
+.t13-section { padding: 4.5rem 0; }
+.t13-card { background: var(--t13-card); color: var(--t13-text); border-radius: var(--t13-radius); box-shadow: 0 1px 8px rgba(0, 0, 0, .1); padding: 2rem; }
+.t13-icon { font-size: 1.6rem; color: var(--t13-primary); }
+.t13-map { width: 100%; min-height: 280px; border: 0; border-radius: var(--t13-radius-sm); display: block; }
+.t13-label { display: block; font-size: .85rem; font-weight: 600; margin: 0 0 .3rem; }
+.t13-inner-hero { background: var(--t13-text); color: #fff; padding: 3.5rem 0 3.5rem; text-align: center; }
+.t13-inner-hero h1 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.6rem); color: #fff; }
+.ord-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+/* Título de portada: acotado para que un texto largo del carrusel no desborde la portada. */
+.t13-hero-title { font-size: clamp(1.6rem, 4.2vw, 3.2rem) !important; line-height: 1.15; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }

@@ -1,0 +1,36 @@
+/*
+ * theme_5 -- "Creative" (landing, adaptado de Start Bootstrap Creative, MIT; ver LICENSE-StartBootstrap-Creative.txt).
+ * Página de presentación sin tienda ni citas. Los colores salen de la paleta del dominio (--primary, --secondary,
+ * --accent, --surface, --text) con el color original de la plantilla (#f4623a) como respaldo.
+ */
+:root {
+  --t5-primary: var(--primary, #f4623a);
+  --t5-secondary: var(--secondary, #f4623a);
+  --t5-accent: var(--accent, #f4623a);
+  --t5-surface: var(--surface, #f8f9fa);
+  --t5-text: var(--text, #212529);
+  --t5-card: #fff;
+  --t5-muted: rgba(33, 37, 41, .65);
+  --t5-line: rgba(0, 0, 0, .12);
+  --t5-radius: 12px;
+  --t5-radius-sm: 6px;
+  --bs-primary: var(--t5-primary);
+}
+/* Botones/enlaces con el primario de la paleta (el acento suele ser un tono claro y el texto blanco no se lee sobre él). */
+.btn-primary { --bs-btn-bg: var(--t5-primary); --bs-btn-border-color: var(--t5-primary); --bs-btn-color: #fff; --bs-btn-hover-bg: var(--t5-text); --bs-btn-hover-border-color: var(--t5-text); --bs-btn-hover-color: #fff; --bs-btn-active-bg: var(--t5-text); --bs-btn-active-border-color: var(--t5-text); --bs-btn-disabled-bg: var(--t5-primary); --bs-btn-disabled-border-color: var(--t5-primary); }
+.btn-outline-primary { --bs-btn-color: var(--t5-primary); --bs-btn-border-color: var(--t5-primary); --bs-btn-hover-bg: var(--t5-primary); --bs-btn-hover-border-color: var(--t5-primary); --bs-btn-hover-color: #fff; }
+.text-primary { color: var(--t5-primary) !important; }
+.bg-primary { background-color: var(--t5-primary) !important; }
+.border-primary { border-color: var(--t5-primary) !important; }
+.t5-main a:not(.btn):not(.nav-link) { color: var(--t5-primary); }
+.t5-lang a { text-decoration: none; }
+.t5-section { padding: 4.5rem 0; }
+.t5-card { background: var(--t5-card); color: var(--t5-text); border-radius: var(--t5-radius); box-shadow: 0 1px 8px rgba(0, 0, 0, .1); padding: 2rem; }
+.t5-icon { font-size: 1.6rem; color: var(--t5-primary); }
+.t5-map { width: 100%; min-height: 280px; border: 0; border-radius: var(--t5-radius-sm); display: block; }
+.t5-label { display: block; font-size: .85rem; font-weight: 600; margin: 0 0 .3rem; }
+.t5-inner-hero { background: var(--t5-text); color: #fff; padding: 9rem 0 3.5rem; text-align: center; }
+.t5-inner-hero h1 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.6rem); color: #fff; }
+.ord-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+/* Título de portada: acotado para que un texto largo del carrusel no desborde la portada. */
+.t5-hero-title { font-size: clamp(1.6rem, 4.2vw, 3.2rem) !important; line-height: 1.15; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }

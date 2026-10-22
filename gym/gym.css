@@ -1,0 +1,86 @@
+/* Horario público del gimnasio. Colores de la paleta del dominio (--primary, --secondary, --accent, --surface, --text); los valores de respaldo
+   solo se usan si el negocio no eligió ninguna. */
+:root {
+  --g-primary: var(--primary, #2f5d8a);
+  --g-secondary: var(--secondary, #1f3f63);
+  --g-accent: var(--accent, #f4c95d);
+  --g-surface: var(--surface, #f5f7fa);
+  --g-text: var(--text, #1c2430);
+  --g-muted: color-mix(in srgb, var(--g-text) 62%, #fff);
+  --g-line: color-mix(in srgb, var(--g-text) 16%, #fff);
+}
+* , *::before, *::after { box-sizing: border-box; }
+body.gym { margin: 0; background: var(--g-surface); color: var(--g-text); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.gym-head { background: linear-gradient(135deg, var(--g-secondary), var(--g-primary)); padding: 18px 20px; }
+.gym-brand { display: inline-flex; align-items: center; gap: 12px; color: #fff; font-weight: 700; font-size: 1.2rem; text-decoration: none; }
+.gym-brand img { max-height: 40px; width: auto; }
+.gym-main { max-width: 860px; margin: 0 auto; padding: 24px 16px 56px; }
+.gym-main h1 { margin: 0 0 18px; font-size: 1.9rem; }
+.gym-day h2 { margin: 26px 0 10px; font-size: 1.15rem; color: var(--g-secondary); border-bottom: 2px solid var(--g-accent); padding-bottom: 4px; }
+.gym-card { display: grid; grid-template-columns: 74px 1fr auto; gap: 14px; align-items: center; background: #fff; border: 1px solid var(--g-line); border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; }
+.gym-card__time { font-size: 1.35rem; font-weight: 700; color: var(--g-primary); line-height: 1.1; }
+.gym-card__time small { display: block; font-size: .8rem; font-weight: 400; color: var(--g-muted); }
+.gym-card h3 { margin: 0 0 2px; font-size: 1.05rem; }
+.gym-card p { margin: 2px 0 0; font-size: .9rem; color: var(--g-muted); }
+.gym-level { margin-left: 6px; font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; background: var(--g-accent); color: #111; padding: 2px 8px; border-radius: 999px; vertical-align: middle; }
+.gym-meta span + span::before { content: "·"; margin: 0 8px; }
+.gym-card__action { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.gym-card__action form { margin: 0; }
+.gym-spots { font-size: .82rem; color: var(--g-muted); }
+.gym-spots--full { color: #8a4b00; font-weight: 600; }
+.gym-btn { cursor: pointer; border: 1px solid var(--g-primary); background: var(--g-primary); color: #fff; font: inherit; font-weight: 600; padding: 8px 18px; border-radius: 8px; }
+.gym-btn:hover { background: var(--g-secondary); border-color: var(--g-secondary); }
+.gym-btn--ghost { background: transparent; color: var(--g-primary); }
+.gym-btn--ghost:hover { background: var(--g-surface); color: var(--g-secondary); }
+.gym-badge { font-size: .78rem; font-weight: 700; padding: 3px 12px; border-radius: 999px; background: var(--g-line); }
+.gym-badge--booked { background: #e3f4e6; color: #1e5b2c; }
+.gym-badge--waitlist { background: #fdf0d2; color: #6b4a00; }
+.gym-alert { padding: 10px 14px; border-radius: 8px; margin-bottom: 14px; border-left: 4px solid; background: #f4f4f4; }
+.gym-alert--success { color: #1e5b2c; border-color: #2e7d32; background: #eaf6ec; }
+.gym-alert--warning { color: #6b4a00; border-color: #b7791f; background: #fdf3df; }
+.gym-alert--error { color: #8a1c14; border-color: #c0392b; background: #fdecea; }
+.gym-empty { color: var(--g-muted); padding: 24px 0; }
+@media (max-width: 560px) {
+  .gym-card { grid-template-columns: 1fr; }
+  .gym-card__action { flex-direction: row; align-items: center; justify-content: space-between; }
+}
+
+/* --- navegación y páginas extra (acceso, progreso, calculadoras) --- */
+.gym-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.gym-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.gym-nav a { color: #fff; text-decoration: none; font-size: .92rem; opacity: .9; }
+.gym-nav a:hover { opacity: 1; text-decoration: underline; }
+.gym-lead { color: var(--g-muted); margin: 0 0 14px; }
+.gym-muted { color: var(--g-muted); font-size: .88rem; }
+.gym-note { font-size: .84rem; color: #6b4a00; background: #fdf3df; border-left: 4px solid #b7791f; padding: 8px 12px; border-radius: 6px; margin: 0 0 18px; }
+.gym-qr { display: inline-flex; flex-direction: column; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--g-line); border-radius: 12px; padding: 20px; margin: 8px 0 14px; }
+.gym-qr img { image-rendering: pixelated; }
+.gym-qr__code { font-size: .72rem; word-break: break-all; max-width: 280px; text-align: center; color: var(--g-muted); }
+.gym-table-wrap { overflow-x: auto; }
+.gym-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--g-line); border-radius: 10px; overflow: hidden; }
+.gym-table th, .gym-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--g-line); }
+.gym-table th { background: var(--g-surface); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--g-muted); }
+.gym-tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.gym-tool { background: #fff; border: 1px solid var(--g-line); border-radius: 12px; padding: 16px; }
+.gym-tool h2 { margin: 0 0 10px; font-size: 1.05rem; color: var(--g-secondary); }
+.gym-field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; font-size: .85rem; color: var(--g-muted); }
+.gym-field input, .gym-field select { padding: 8px 10px; font: inherit; color: var(--g-text); border: 1px solid var(--g-line); border-radius: 8px; background: #fff; }
+.gym-field input:focus, .gym-field select:focus { outline: 2px solid var(--g-primary); outline-offset: 1px; }
+.gym-result { margin: 12px 0 0; padding: 10px 12px; background: var(--g-surface); border-radius: 8px; font-size: .95rem; }
+.gym-result strong { color: var(--g-primary); font-size: 1.15rem; }
+.gym-zones { margin: 8px 0 0; padding-left: 18px; font-size: .9rem; }
+.gym-timer strong { margin-right: 8px; }
+.gym-cta { margin-top: 28px; text-align: center; }
+.gym-cta .gym-btn { display: inline-block; text-decoration: none; }
+
+
+/* --- planes y membresías --- */
+.gym-plans { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+.gym-plan { background: #fff; border: 1px solid var(--g-line); border-top: 4px solid var(--g-accent); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 8px; }
+.gym-plan h2 { margin: 0; font-size: 1.15rem; color: var(--g-secondary); }
+.gym-plan ul { margin: 0; padding-left: 18px; color: var(--g-muted); font-size: .92rem; flex: 1; }
+.gym-plan .gym-btn { display: inline-block; text-align: center; text-decoration: none; }
+.gym-card--membership { grid-template-columns: 1fr; }
+.gym-badge--active { background: #e3f4e6; color: #1e5b2c; }
+.gym-badge--frozen { background: #e1effa; color: #12405f; }
+.gym-badge--cancelled, .gym-badge--expired { background: #ececec; color: #555; }
