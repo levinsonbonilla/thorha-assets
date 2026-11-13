@@ -54,7 +54,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(10, 12, 25, 0.7) 0%, rgba(10, 12, 25, 0.4) 45%, rgba(10, 12, 25, 0.05) 75%);
+  background: linear-gradient(90deg, rgba(10, 12, 25, 0.78) 0%, rgba(10, 12, 25, 0.45) 50%, rgba(10, 12, 25, 0.1) 80%);
 }
 
 .section-slide .item-slick1 > .container {
@@ -63,32 +63,69 @@
   height: 100%;
 }
 
+/* Bloque de texto a la izquierda (pedido real del usuario, 2026-10-17): el
+   nombre del slide es el título (grande, bold) y la descripción una bajada
+   más chica y en blanco atenuado -- antes el nombre iba como etiqueta de 14px
+   y la descripción a 42px con trazo, con la jerarquía invertida. La bajada se
+   corta a 3 líneas para que una descripción larga no se vuelva una pared de
+   texto. Clases propias (`.slide-*`) en vez de `.ltext-101`/`.ltext-201` del
+   theme, que también se usan en checkout. */
 .section-slide .flex-col-l-m {
-  max-width: 640px;
+  max-width: 620px;
   padding-top: 0 !important;
+  text-align: left;
 }
 
-.section-slide .ltext-101 {
-  display: inline-block;
-  font-family: Poppins-Medium;
-  font-size: 14px;
-  letter-spacing: 2px;
-  color: #cfd3ff;
-}
-
-.section-slide .ltext-201 {
-  font-size: clamp(24px, 3.4vw, 42px);
-  line-height: 1.35;
-  text-transform: none;
+.section-slide .slide-title {
+  font-family: Poppins-Bold;
+  font-size: clamp(32px, 4.4vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
   color: #fff;
-  /* pedido real del usuario (2026-08-28): "el texto con trazo" -- contorno
-     oscuro alrededor de cada letra (no solo un `text-shadow` difuso) para que
-     el texto blanco siga siendo legible incluso sobre la franja más clara del
-     degradado o una foto de fondo muy clara. `text-shadow` se mantiene además
-     como sombra suave para dar profundidad, el trazo es lo que garantiza el
-     contorno nítido letra por letra. */
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.6);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  margin: 0 0 18px;
+  /* Trazo (pedido del usuario, 2026-10-17): contorno oscuro letra por letra por si
+     la foto tiene zonas blancas/claras justo detrás del texto, donde el degradado
+     no alcanza. `paint-order` dibuja el trazo DETRÁS del relleno, así no "come"
+     el grosor de la letra; la sombra suma profundidad. */
+  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.55);
+  paint-order: stroke fill;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+}
+
+/* Barra de acento sobre el título, con el color primario del dominio si existe. */
+.section-slide .slide-title::before {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 4px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  background: var(--primary, #fff);
+}
+
+.section-slide .slide-text {
+  font-family: Poppins-Regular;
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.9);
+  /* Mismo criterio de trazo que `.slide-title`, más fino por el tamaño de letra. */
+  -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.5);
+  paint-order: stroke fill;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 2px 10px rgba(0, 0, 0, 0.4);
+  max-width: 520px;
+  margin: 0 0 32px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.section-slide .slide-btn {
+  min-width: 180px;
+  height: 48px;
+  padding: 0 28px;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 767px) {
@@ -99,6 +136,10 @@
   .section-slide .item-slick1 {
     height: 460px;
     border-radius: 12px;
+  }
+
+  .section-slide .item-slick1::before {
+    background: linear-gradient(90deg, rgba(10, 12, 25, 0.78) 0%, rgba(10, 12, 25, 0.5) 100%);
   }
 
   .section-slide .flex-col-l-m {
@@ -116,9 +157,20 @@
     border-radius: 10px;
   }
 
-  .section-slide .ltext-201 {
-    font-size: clamp(20px, 6vw, 28px);
-    -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.6);
+  .section-slide .slide-title {
+    font-size: clamp(26px, 8vw, 34px);
+    margin-bottom: 12px;
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .section-slide .slide-title::before {
+    width: 40px;
+    margin-bottom: 14px;
+  }
+
+  .section-slide .slide-text {
+    font-size: 14px;
+    margin-bottom: 22px;
   }
 }
 
