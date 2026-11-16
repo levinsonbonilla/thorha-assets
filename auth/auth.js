@@ -29,3 +29,17 @@
     confirm.addEventListener('input', check);
   });
 }());
+
+// Cambio de pantalla (login <-> registro <-> recuperación): el formulario sale deslizándose y la siguiente página entra igual (auth.css).
+(function () {
+  var panel = document.querySelector('.auth-panel');
+  if (!panel || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { return; }
+  panel.querySelectorAll('a[href]:not([href^="#"]):not([target])').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0 || a.origin !== window.location.origin) { return; }
+      e.preventDefault();
+      panel.classList.add('is-leaving');
+      setTimeout(function () { window.location.href = a.href; }, 350);
+    });
+  });
+}());
