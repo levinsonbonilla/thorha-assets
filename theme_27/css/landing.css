@@ -25,7 +25,7 @@ a { color: var(--t27-primary); }
 /* Velo oscuro (color de texto de la paleta) para que el título blanco se lea sobre cualquier foto de portada. */
 header.masthead:before { background-color: var(--t27-text); opacity: .6; }
 .t27-navbar .navbar-brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; color: var(--t27-primary); }
-.t27-navbar .navbar-brand img { height: 36px; width: auto; max-width: 130px; object-fit: contain; }
+.t27-navbar .navbar-brand img { height: 52px; width: auto; max-width: 190px; object-fit: contain; }
 .t27-navbar .nav-link { color: var(--t27-text); }
 .t27-navbar .nav-link:hover { color: var(--t27-secondary); }
 .t27-lang a, .t27-lang span { font-size: .85rem; margin-right: .5rem; text-decoration: none; }

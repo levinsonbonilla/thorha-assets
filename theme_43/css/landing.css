@@ -33,7 +33,7 @@ a { color: var(--t43-primary); }
 /* Barra superior oscura */
 .t43-navbar { background: var(--t43-text); position: sticky; top: 0; z-index: 20; border-bottom: 1px solid rgba(255, 255, 255, .08); }
 .t43-navbar .navbar-brand { display: flex; align-items: center; gap: .6rem; font-weight: 800; letter-spacing: -.01em; color: #fff; }
-.t43-navbar .navbar-brand img { height: 36px; width: auto; max-width: 130px; object-fit: contain; }
+.t43-navbar .navbar-brand img { height: 52px; width: auto; max-width: 190px; object-fit: contain; }
 .t43-navbar .nav-link { color: rgba(255, 255, 255, .75); }
 .t43-navbar .nav-link:hover { color: #fff; }
 .t43-navbar .navbar-toggler { border-color: rgba(255, 255, 255, .35); }

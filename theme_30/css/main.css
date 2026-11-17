@@ -54,7 +54,7 @@ a:hover { color: var(--t30-primary); }
 .t30-topbar a:hover { opacity: 1; }
 .t30-navbar { background: var(--t30-gradient); position: sticky; top: 0; z-index: 1030; box-shadow: 0 2px 10px rgba(0, 0, 0, .25); }
 .t30-navbar .navbar-brand { display: flex; align-items: center; gap: .6rem; color: #fff; font-weight: 700; }
-.t30-navbar .navbar-brand img { height: 38px; width: auto; max-width: 140px; object-fit: contain; }
+.t30-navbar .navbar-brand img { height: 54px; width: auto; max-width: 200px; object-fit: contain; }
 .t30-navbar .nav-link { color: #eeedeb; opacity: .65; font-weight: 500; font-size: .92rem; }
 .t30-navbar .nav-link:hover, .t30-navbar .nav-link.active { opacity: 1; font-weight: 600; color: #fff; }
 .t30-navbar .dropdown-menu { border: 0; border-radius: var(--t30-radius-sm); box-shadow: var(--t30-shadow); }

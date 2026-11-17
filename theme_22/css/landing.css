@@ -23,7 +23,7 @@
 }
 body { color: var(--t22-text); background: #fff; }
 .t22-brand-text { color: #fff; font-weight: 700; font-size: 1.35rem; letter-spacing: .2px; }
-.t22-brand-logo { height: 36px; width: auto; max-width: 140px; object-fit: contain; }
+.t22-brand-logo { height: 52px; width: auto; max-width: 200px; object-fit: contain; }
 .navbar-area.navbar-nine .navbar-brand { display: inline-flex; align-items: center; gap: .6rem; }
 .t22-lang { display: flex; align-items: center; gap: .6rem; margin-left: 1rem; }
 .t22-lang a, .t22-lang span { color: rgba(255, 255, 255, .75); font-size: .85rem; text-decoration: none; }
