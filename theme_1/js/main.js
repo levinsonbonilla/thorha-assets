@@ -92,7 +92,7 @@
     }
 
     $(window).resize(function(){
-        if($(window).width() >= 992){
+        if($(window).width() >= 1200){
             if($('.menu-mobile').css('display') == 'block') {
                 $('.menu-mobile').css('display','none');
                 $('.btn-show-menu-mobile').toggleClass('is-active');

@@ -1,0 +1,14 @@
+/* Fuentes locales del kit (Google Fonts, licencia OFL), solo subconjunto latino. Las variables traen todos los pesos en un archivo. */
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400; font-display: swap; src: url('../fonts/cormorant-italic-400.woff2') format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('../fonts/cormorant-normal-400.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('../fonts/inter-normal-400.woff2') format('woff2'); }
+@font-face { font-family: 'Jost'; font-style: normal; font-weight: 400 600; font-display: swap; src: url('../fonts/jost-normal-400.woff2') format('woff2'); }
+@font-face { font-family: 'Oswald'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('../fonts/oswald-normal-400.woff2') format('woff2'); }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('../fonts/spacegrotesk-normal-400.woff2') format('woff2'); }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 500 900; font-display: swap; src: url('../fonts/playfair-normal-500.woff2') format('woff2'); }
+@font-face { font-family: 'Nunito'; font-style: normal; font-weight: 400 800; font-display: swap; src: url('../fonts/nunito-normal-400.woff2') format('woff2'); }
+@font-face { font-family: 'Space Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/spacemono-normal-400.woff2') format('woff2'); }
+@font-face { font-family: 'Space Mono'; font-style: normal; font-weight: 700; font-display: swap; src: url('../fonts/spacemono-normal-700.woff2') format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('../fonts/dmsans-normal-400.woff2') format('woff2'); }
+@font-face { font-family: 'Bebas Neue'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/bebas-normal-400.woff2') format('woff2'); }
+@font-face { font-family: 'Syne'; font-style: normal; font-weight: 500 800; font-display: swap; src: url('../fonts/syne-normal-500.woff2') format('woff2'); }

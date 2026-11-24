@@ -528,6 +528,37 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   flex-grow: unset;
 }
 
+/*---------------------------------------------
+  Encabezado clásico de escritorio (≥1200px): con logo + nombre + 6/7 ítems de menú +
+  buscar/carrito/favoritos/idioma + «Iniciar sesión» no cabía todo y el menú partía las palabras en dos líneas
+  ("Agendar / cita") mientras los botones de acceso quedaban fuera de la pantalla. Ahora: los ítems no se parten,
+  los márgenes se compactan y la zona de íconos/botones NUNCA se encoge ni se empuja fuera. Debajo de 1200px entra el
+  encabezado móvil (hamburguesa + botón de acceso), porque con sesión iniciada los íconos no caben. */
+.main-menu > li > a { white-space: nowrap; }
+.wrap-menu-desktop .limiter-menu-desktop { flex-wrap: nowrap; }
+.limiter-menu-desktop .wrap-icon-header { flex-shrink: 0; margin-left: auto; }
+.limiter-menu-desktop .logo { flex-shrink: 0; }
+@media (min-width: 1200px) {
+  .logo { margin-right: 18px; }
+  .logo img { max-width: 180px; object-fit: contain; object-position: left center; }
+  .logo .header-business-name { max-width: 170px; overflow: hidden; text-overflow: ellipsis; }
+  .main-menu > li { margin: 0 0 0 4px; padding: 20px 6px 20px 0; }
+  .main-menu > li > a { font-size: 13px; }
+  .limiter-menu-desktop .wrap-icon-header .icon-header-item:not(.store-lang-switcher) { font-size: 22px; padding-left: 10px !important; padding-right: 6px !important; }
+}
+@media (min-width: 1200px) and (max-width: 1699px) {
+  .logo .header-business-name { display: none; }
+}
+@media (min-width: 1200px) and (max-width: 1299px) {
+  .main-menu > li > a { font-size: 12.5px; }
+  .main-menu > li { padding-right: 4px; }
+}
+/* Encabezado móvil: los íconos no saltan de línea y en celular angosto el nombre largo no se encima al logo. */
+.wrap-header-mobile .wrap-icon-header { flex-wrap: nowrap !important; align-items: center; }
+@media (max-width: 575px) {
+  .logo-mobile .header-business-name { display: none; }
+}
+
 
 /*------------------------------------------------------------------
 [ Modal search ]*/
@@ -727,7 +758,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 /*---------------------------------------------*/
-@media (max-width: 991px){
+@media (max-width: 1199px){
   .wrap-header-mobile {
     display: -webkit-box;
     display: -webkit-flex;
@@ -819,7 +850,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   color: #555555;
 }
 
-@media (min-width: 992px){
+@media (min-width: 1200px){
   .menu-mobile {
     display: none;
   }
