@@ -55,7 +55,7 @@ body.kit--head-rail .kit-menu .dropdown-item:hover { background: rgba(255, 255, 
 body.kit--head-rail .kit-rail__cta { width: 100%; margin: 1rem 0; background: var(--kit-accent); color: #111; }
 body.kit--head-rail .kit-rail__actions { flex-wrap: wrap; justify-content: flex-start; gap: .35rem; }
 @media (min-width: 992px) {
-  body.kit--head-rail { padding-left: 288px; }
+  body.kit--head-rail { padding-left: 288px; --kit-side: 288px; }
   body.kit--head-rail .kit-header--rail { position: fixed; z-index: 1030; inset: 0 auto 0 0; width: 288px; }
   body.kit--head-rail .kit-rail { position: static; height: 100vh; flex-direction: column; align-items: stretch; flex-wrap: nowrap; padding: 2rem 1.6rem 1.4rem; overflow-y: auto; }
   body.kit--head-rail .kit-rail__top { display: block; text-align: left; }
@@ -414,9 +414,13 @@ body.kit .kit-bento__tile--text .kit-hero__title { font-size: clamp(1.7rem, 3.8v
 
 /* ---- BANNER: franja compacta con la foto cortada en diagonal ---- */
 body.kit .kit-hero--banner { background: color-mix(in srgb, var(--kit-primary) 8%, var(--kit-surface)); position: relative; }
+/* La regla base `.kit-hero .carousel-item` (min-height 480px + velo oscuro ::before, pensada para la portada de fondo completo) dejaba aquí la
+   foto en una franja más baja que la diapositiva, con un hueco gris y velado debajo. El banner manda su propio alto. */
+body.kit .kit-hero--banner .carousel-item { min-height: 0; background: none; }
+body.kit .kit-hero--banner .carousel-item::before { display: none; }
 .kit-banner { display: grid; grid-template-columns: 1.1fr 1fr; align-items: stretch; min-height: clamp(300px, 42vh, 420px); }
 .kit-banner__text { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 2rem 2rem 2rem 0; }
-.kit-banner__pic { background-size: cover; background-position: center; clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%); margin-right: calc(50% - 50vw); min-height: 260px; }
+.kit-banner__pic { background-size: cover; background-position: center; clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%); margin-right: calc(50% - 50vw + var(--kit-side, 0px) / 2); min-height: 260px; }
 body.kit .kit-hero--banner .kit-hero__kicker { color: var(--kit-primary); letter-spacing: .22em; text-transform: uppercase; font-weight: 700; font-size: .78rem; }
 body.kit .kit-hero--banner .kit-hero__title { font-size: clamp(1.7rem, 3.8vw, 3rem); line-height: 1.06; margin: .6rem 0 1.3rem; display: block; -webkit-line-clamp: unset; overflow: visible; }
 .kit-banner__dots { position: static; margin: 0 0 .8rem; }

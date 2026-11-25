@@ -58,8 +58,9 @@
                 appendDots: $(wrapSlick1).find('.wrap-slick1-dots'),
                 dotsClass:'slick1-dots',
                 customPaging: function(slick, index) {
-                    var linkThumb = $(slick.$slides[index]).data('thumb');
-                    var caption = $(slick.$slides[index]).data('caption');
+                    // Sin data-thumb (diapositiva de respaldo), la foto de la propia diapositiva: nunca src="undefined".
+                    var linkThumb = $(slick.$slides[index]).data('thumb') || $(slick.$slides[index]).find('img').attr('src') || '';
+                    var caption = $(slick.$slides[index]).data('caption') || '';
                     return  '<img src="' + linkThumb + '">' +
                             '<span class="caption-dots-slick1">' + caption + '</span>';
                 },
@@ -159,8 +160,9 @@
                 appendDots: $(this).find('.wrap-slick3-dots'),
                 dotsClass:'slick3-dots',
                 customPaging: function(slick, index) {
-                    var portrait = $(slick.$slides[index]).data('thumb');
-                    return '<img src=" ' + portrait + ' "/><div class="slick3-dot-overlay"></div>';
+                    // Sin data-thumb (p. ej. la foto de respaldo de la vista rápida), la de la propia diapositiva: nunca src=" undefined ".
+                    var portrait = $(slick.$slides[index]).data('thumb') || $(slick.$slides[index]).find('img').attr('src') || '';
+                    return '<img src="' + portrait + '" alt=""/><div class="slick3-dot-overlay"></div>';
                 },  
             });
         });

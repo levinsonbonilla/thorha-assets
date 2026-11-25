@@ -11,6 +11,18 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  // Carruseles: Bootstrap solo marca el indicador activo dentro de `.carousel-indicators`; las portadas con contador propio
+  // (`.kit-hero__count` de «full», miniaturas, etc.) se quedaban en «01» aunque la diapositiva cambiara. Se sincroniza cualquier
+  // [data-bs-slide-to] del carrusel con la diapositiva que entra (va antes del corte de «reducir movimiento»: no es animación).
+  document.addEventListener('slid.bs.carousel', function (e) {
+    var carousel = e.target;
+    carousel.querySelectorAll('[data-bs-slide-to]').forEach(function (btn) {
+      var on = parseInt(btn.getAttribute('data-bs-slide-to'), 10) === e.to;
+      btn.classList.toggle('active', on);
+      if (on) { btn.setAttribute('aria-current', 'true'); } else { btn.removeAttribute('aria-current'); }
+    });
+  });
+
   if (reduce || !('IntersectionObserver' in window)) { return; }
 
   var targets = document.querySelectorAll(
